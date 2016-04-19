@@ -4,11 +4,21 @@ def caesar_cipher(string, shift)
 
     cipher.each do |letter|
 
-        letter.sum += shift
+		translate = letter.ord + shift
 
+      if(letter == letter.upcase)
+
+      	return translate.chr.upcase
+
+      elsif(translate > 122)
+
+      	cycled = letter.ord -25
+      	cycled += shift
+      	return cycled.chr
+      end
+          
     end
 
 
-end
 
-caesar_cipher("abc", 3)
+end
