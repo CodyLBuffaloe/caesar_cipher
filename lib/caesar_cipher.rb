@@ -1,4 +1,5 @@
-def caesar_cipher(string, shift)
+class CaesarCipher
+  def self.caesar_cipher(string, shift)
 
     cipher = string.split("")
     ciphered_text = []
@@ -22,9 +23,10 @@ def caesar_cipher(string, shift)
 
     end
 
-    puts ciphered_text.join("")
+    ciphered_text.join("")
 
+  end
 end
 
 
-caesar_cipher("Zbz",3)
+
