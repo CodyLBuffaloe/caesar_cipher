@@ -9,10 +9,10 @@ class CaesarCipher
 		translate = letter.ord + shift
 
 		if(translate > 122)
-		    translate = (letter.ord - 25) + shift
+		    translate = (letter.ord - 26) + shift
 
 		elsif(letter.ord.between?(65,90) && translate > 90)
-		    translate = (letter.ord - 25) + shift
+		    translate = (letter.ord - 26) + shift
 
         elsif(letter.ord.between?(32,64) || letter.ord.between?(91,96))
 		    translate = letter.ord
