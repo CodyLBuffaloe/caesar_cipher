@@ -21,5 +21,20 @@ describe CaesarCipher do
         end
       end
     end
+    context "given words separated by a space" do
+      it "preserves the space untranslated and correctly transposes the letters" do
+        expect(CaesarCipher.caesar_cipher("cat act", 1)).to eql("dbu bdu")
+      end
+    end
+    context "given shift as length of alphabet" do
+      it "wraps and returns the letter 26 positions away from itself" do
+        expect(CaesarCipher.caesar_cipher("z", 26)).to eql("z")
+      end
+    end
+    context "given a sentence with punctuation" do
+      it "preserves the punctuation" do
+        expect(CaesarCipher.caesar_cipher("I'm sorry, I can't.", 1)).to eql("J'n tpssz, J dbo'u.")
+      end
+    end
   end
 end
